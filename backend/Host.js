@@ -8,3 +8,7 @@ function Host(id, name, firstname, mail, phone){
     this.phone = phone;
     this.listFollowers = {};
 }
+
+// add Guest
+// modifier Guest
+// supprimer Guest
