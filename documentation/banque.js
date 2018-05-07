@@ -3,7 +3,7 @@ var listeComptes = {};
 // Constructeur pour les Positions
 function Position(id, somme) {
   // l'id du compte
-  this.id = id
+  this.id = id;
   // la somme
   this.somme = somme;
   // la date de dernière opération
