@@ -1,3 +1,5 @@
+var listeParticipants = {};
+
 // Constructeur pour la Gestion d'events
 // à compléter
 function Event(id, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart){

@@ -1,4 +1,4 @@
-// Constructeur pour un Participant (accompagnateur/invité)
+// Constructeur pour un Participant (accompagnateur)
 function Guest(id, name, firstname, mail, phone){
     this.id = id;
     this.name = name;
