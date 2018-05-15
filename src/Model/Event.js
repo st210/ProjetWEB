@@ -1,3 +1,5 @@
+var listeParticipants = {};
+
 // Constructeur pour la Gestion d'events
 // à compléter
 function Event(id, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart){
@@ -10,3 +12,11 @@ function Event(id, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart
     this.nbMax = nbMax;
     this.typePart = typePart;
 }
+
+// affiche les events
+// add new event
+// modifier event
+// supprimer event
+// add new participant (host) à event + tous ses accompagnants
+// -> tout mettre dans listeParticipants si assez de place
+
