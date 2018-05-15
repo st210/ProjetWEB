@@ -20,8 +20,3 @@ function Event(id, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart
 // add new participant (host) à event + tous ses accompagnants
 // -> tout mettre dans listeParticipants si assez de place
 
-
-
-/* TODO Yann
-- nb max par types participants à un event (interface)
-*/
