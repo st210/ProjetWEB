@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app='myBanqueApp' lang="fr">
+    <head>
+        <title>The Banque</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rémi Venant">
+
+        <!-- Ajout des librairies CSS tierces -->
+        <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href ui-sref="creation">The Bank</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <!-- ui-sref permet de faire un lien vers un état de notre application, tandis que ui-sref-active permet de rajouter une classe css (ici "active") lorsque nous sommes dans l'état défini par ui-sref -->
+                        <a class="nav-link" href ui-sref="creation" ui-sref-active="active">Nouveau compte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href ui-sref="position" ui-sref-active="active">Position</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opérations
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href ui-sref="operation.retrait" ui-sref-active="active">Retrait</a>
+                            <a class="dropdown-item" href ui-sref="operation.ajout" ui-sref-active="active">Ajout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <!--Ici sera injecté le contenu d'une vue (attribut ui-view) -->
+            <div ui-view></div>
+        </div>
+
+        <!-- Ajout des librairies JS tierces -->
+        <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="../bower_components/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/bower_components/angular/angular.min.js" type="text/javascript"></script>
+        <script src="/bower_components/angular-resource/angular-resource.min.js" type="text/javascript"></script>
+        <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
+
+        <!-- Ajout des scripts de notre application Angular, EN COMMENCANT LE SCRIPT PRINCIPAL DE NOTRE APPLI (celui qui contient la configuration du module et ses dépendances) -->
+        <script src="appliAngular/app.js" type="text/javascript"></script>
+        <script src="appliAngular/controllers/creationController.js" type="text/javascript"></script>
+        <script src="appliAngular/controllers/operationController.js" type="text/javascript"></script>
+        <script src="appliAngular/controllers/positionController.js" type="text/javascript"></script>
+        <script src="appliAngular/services/compteService.js" type="text/javascript"></script>
+
+    </body>
+</html>

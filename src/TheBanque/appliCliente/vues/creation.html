@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col">
+        <h1 class='text-center text-success'>Création d'un compte</h1>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <form name='creationCompteForm' ng-submit="creerCompte()"> <!-- ng-submit équivaut à ng-click sur le bouton submit du formulaire, mais ne sera déclenché que si le navigateur considère le formulaire comme correctement rempli (cf. required etc) -->
+            <div class="form-group">
+                <label for="idCompte">Id du compte</label>
+                <input type="text" class="form-control" id="idCompte" placeholder="Saisissez un id" required tabindex="1" ng-model='compte.id'>
+            </div>
+            <div class="form-group">
+                <label for="sommeCompte">Solde initiale</label>
+                <input type="number" step="any" class="form-control" id="sommeCompte" placeholder="Solde" required tabindex="2" ng-model='compte.somme'>
+            </div>
+            <button type="submit" class="btn btn-primary">Créer</button>
+        </form>
+        <div ng-if="traitement.termine" class='mt-2'>
+            <div ng-if="!traitement.erreur" class="alert alert-success" role="alert">
+                Compte correctement créé.
+            </div>
+            <div ng-if="traitement.erreur" class="alert alert-danger" role="alert">
+                {{traitement.erreur}}
+            </div>
+        </div>
+    </div>
+</div>
