@@ -1,0 +1,24 @@
+{
+  "name": "projetweb",
+  "version": "1.0.0",
+  "description": "Mehdy Latreche - Yann Godeau - Estée Desanctis",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/st210/ProjetWEB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/st210/ProjetWEB/issues"
+  },
+  "homepage": "https://github.com/st210/ProjetWEB#readme"
+}
