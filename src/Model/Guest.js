@@ -1,6 +1,6 @@
 // Constructeur pour un Accompagnateur
-function Guest(id, name, firstname, mail, phone){
-    this.id = id;
+function Guest(idG, name, firstname, mail, phone){
+    this.idG = idG;
     this.name = name;
     this.firstname = firstname;
     this.mail = mail;

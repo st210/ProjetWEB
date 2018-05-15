@@ -1,7 +1,7 @@
 /** PARTICIPANT **/
 // Constructeur pour un Participant (non accompagnateur)
-function Participant(id, name, firstname, mail, phone){
-    this.id = id;
+function Participant(idP, name, firstname, mail, phone){
+    this.idP = idP;
     this.name = name;
     this.firstname = firstname;
     this.mail = mail;
@@ -11,8 +11,8 @@ function Participant(id, name, firstname, mail, phone){
 
 /** GUEST **/
 // Constructeur pour un Accompagnateur
-function Guest(id, name, firstname, mail, phone){
-    this.id = id;
+function Guest(idG, name, firstname, mail, phone){
+    this.idG = idG;
     this.name = name;
     this.firstname = firstname;
     this.mail = mail;
@@ -20,11 +20,11 @@ function Guest(id, name, firstname, mail, phone){
 }
 
 // add new Guest
-var addGuest = function(id) {
+var addGuest = function(idG) {
 	// s'il n'existe pas
-	if (typeof listGuests[id] === 'undefined') {
+	if (typeof listGuests[idG] === 'undefined') {
 		// on le cree
-		listGuests[id] = new Guest(id);
+		listGuests[idG] = new Guest(idG);
 		//console.log(listeComptes);
 		return 1;
     }

@@ -1,25 +1,24 @@
 var listeParticipants = {};
 var listeEvents = {};
-var boolean
 
-// Constructeur pour la Gestion d'events
-// à compléter
-function Event(id, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart){
+// Constructeur d'un Event
+function Event(idE, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart){
+    this.idE = idE;
     this.acronym = acronym;
     this.name = name;
     this.place = place;
     this.desc = desc;
-    this.dateDeb = new Date();
-    this.dateFin = new Date();
+    this.dateDeb = dateDeb;
+    this.dateFin = dateFin;
     this.nbMax = nbMax;
     this.typePart = typePart;
 }
 
 // affiche les events
 // add new event
-var createEvent = function(id, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart){
-    if (typeof listeEvents[id] === 'undefined'){
-        listeEvents[id] = new Event(id, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart);
+var createEvent = function(idE, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart){
+    if (typeof listeEvents[idE] === 'undefined'){
+        listeEvents[idE] = new Event(idE, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart);
         console.log(listeEvents);
         return 0;
     }
@@ -29,5 +28,6 @@ var createEvent = function(id, acronym, name, place, desc, dateDeb, dateFin, nbM
 // modifier event
 // supprimer event
 // add new participant (host) à event + tous ses accompagnants
-// -> tout mettre dans listeParticipants si assez de place
+//      -> tout mettre dans listeParticipants si assez de place
 
+exports.createEvent = createEvent;
