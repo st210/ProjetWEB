@@ -1,9 +1,11 @@
 var express = require('express');
-var bodyParser = require('body-parser');
-var gestionEvent = require('.gestionEvent/');
-var listeEvents = {};
+var eventList = {};
 
+var event = require('./Model/Event');
+var bodyParser = require('body-parser');
 var app = express();
+
+// Configuration d'express
 
 app.get('/', function (req, res) {
     res.send('Hello World!');
