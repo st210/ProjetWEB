@@ -14,7 +14,11 @@ function Event(idE, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePar
     this.typePart = typePart;
 }
 
-// affiche les events
+// affiche les events, recherche par idE
+var getEventByIdE = function(idE){
+    for i in listeEvents
+}
+
 // add new event
 var createEvent = function(idE, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePart){
     if (typeof listeEvents[idE] === 'undefined'){
