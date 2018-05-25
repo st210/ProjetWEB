@@ -2,8 +2,160 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10d36305-5bfe-4c01-9ee4-bfc87b710ce0" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/data/flot-data.js" afterPath="$PROJECT_DIR$/src/html/assets/data/flot-data.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/data/morris-data.js" afterPath="$PROJECT_DIR$/src/html/assets/data/morris-data.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/dist/css/sb-admin-2.css" afterPath="$PROJECT_DIR$/src/html/assets/dist/css/sb-admin-2.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/dist/css/sb-admin-2.min.css" afterPath="$PROJECT_DIR$/src/html/assets/dist/css/sb-admin-2.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/dist/js/sb-admin-2.js" afterPath="$PROJECT_DIR$/src/html/assets/dist/js/sb-admin-2.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/dist/js/sb-admin-2.min.js" afterPath="$PROJECT_DIR$/src/html/assets/dist/js/sb-admin-2.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/js/sb-admin-2.js" afterPath="$PROJECT_DIR$/src/html/assets/js/sb-admin-2.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/less/mixins.less" afterPath="$PROJECT_DIR$/src/html/assets/less/mixins.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/less/sb-admin-2.less" afterPath="$PROJECT_DIR$/src/html/assets/less/sb-admin-2.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/less/variables.less" afterPath="$PROJECT_DIR$/src/html/assets/less/variables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap-social/bootstrap-social.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap-social/bootstrap-social.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap-social/bootstrap-social.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap-social/bootstrap-social.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap-social/bootstrap-social.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap-social/bootstrap-social.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/css/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/js/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/bootstrap/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables-plugins/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables-plugins/dataTables.bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables-plugins/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables-plugins/dataTables.bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables-plugins/dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables-plugins/dataTables.bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables-plugins/index.html" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables-plugins/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables-responsive/dataTables.responsive.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables-responsive/dataTables.responsive.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables-responsive/dataTables.responsive.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables-responsive/dataTables.responsive.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables-responsive/dataTables.responsive.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables-responsive/dataTables.responsive.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.bootstrap.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.bootstrap4.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.bootstrap4.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.bootstrap4.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.bootstrap4.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.foundation.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.foundation.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.foundation.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.foundation.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.jqueryui.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.jqueryui.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.jqueryui.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.jqueryui.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.material.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.material.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.material.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.material.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.semanticui.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.semanticui.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.semanticui.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.semanticui.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.uikit.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.uikit.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/dataTables.uikit.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/dataTables.uikit.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/jquery.dataTables.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/jquery.dataTables.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/jquery.dataTables.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/jquery.dataTables.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/css/jquery.dataTables_themeroller.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/css/jquery.dataTables_themeroller.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/images/Sorting icons.psd" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/images/Sorting icons.psd" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/images/favicon.ico" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/images/favicon.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/images/sort_asc.png" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/images/sort_asc.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/images/sort_asc_disabled.png" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/images/sort_asc_disabled.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/images/sort_both.png" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/images/sort_both.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/images/sort_desc.png" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/images/sort_desc.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/images/sort_desc_disabled.png" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/images/sort_desc_disabled.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.bootstrap4.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.bootstrap4.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.bootstrap4.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.bootstrap4.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.foundation.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.foundation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.foundation.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.foundation.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.jqueryui.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.jqueryui.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.jqueryui.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.jqueryui.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.material.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.material.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.material.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.material.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.semanticui.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.semanticui.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.semanticui.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.semanticui.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.uikit.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.uikit.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/dataTables.uikit.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/dataTables.uikit.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/jquery.dataTables.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/jquery.dataTables.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/jquery.dataTables.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/datatables/js/jquery.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/datatables/js/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot-tooltip/jquery.flot.tooltip.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot-tooltip/jquery.flot.tooltip.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot-tooltip/jquery.flot.tooltip.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot-tooltip/jquery.flot.tooltip.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot-tooltip/jquery.flot.tooltip.source.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot-tooltip/jquery.flot.tooltip.source.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/excanvas.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/excanvas.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/excanvas.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/excanvas.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.colorhelpers.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.colorhelpers.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.canvas.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.canvas.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.categories.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.categories.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.crosshair.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.crosshair.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.errorbars.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.errorbars.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.fillbetween.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.fillbetween.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.image.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.image.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.navigate.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.navigate.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.pie.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.pie.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.resize.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.resize.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.selection.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.selection.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.stack.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.stack.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.symbol.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.symbol.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.threshold.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.threshold.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.flot.time.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.flot.time.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/flot/jquery.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/flot/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/HELP-US-OUT.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/css/font-awesome.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/css/font-awesome.css.map" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/css/font-awesome.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/animated.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/bordered-pulled.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/core.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/extras.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/extras.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/fixed-width.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/font-awesome.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/icons.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/larger.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/list.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/mixins.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/path.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/rotated-flipped.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/screen-reader.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/spinning.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/spinning.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/stacked.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/less/variables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_animated.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_animated.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_core.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_extras.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_extras.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_fixed-width.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_icons.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_larger.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_list.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_path.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_screen-reader.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_spinning.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_spinning.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_stacked.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/_variables.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/src/html/assets/vendor/font-awesome/scss/font-awesome.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/jquery/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/jquery/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/metisMenu/metisMenu.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/metisMenu/metisMenu.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/metisMenu/metisMenu.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/metisMenu/metisMenu.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/metisMenu/metisMenu.min.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/metisMenu/metisMenu.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/metisMenu/metisMenu.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/metisMenu/metisMenu.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/morrisjs/morris.css" afterPath="$PROJECT_DIR$/src/html/assets/vendor/morrisjs/morris.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/morrisjs/morris.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/morrisjs/morris.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/morrisjs/morris.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/morrisjs/morris.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/raphael/raphael.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/raphael/raphael.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/assets/vendor/raphael/raphael.min.js" afterPath="$PROJECT_DIR$/src/html/assets/vendor/raphael/raphael.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/create-evenement.html" afterPath="$PROJECT_DIR$/src/html/create-evenement.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/edit-evenement.html" afterPath="$PROJECT_DIR$/src/html/edit-evenement.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/evenements.html" afterPath="$PROJECT_DIR$/src/html/evenements.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/src/html/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/login.html" afterPath="$PROJECT_DIR$/src/html/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/mes-evenements.html" afterPath="$PROJECT_DIR$/src/html/mes-evenements.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/see-evenement.html" afterPath="$PROJECT_DIR$/src/html/see-evenement.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/user.html" afterPath="$PROJECT_DIR$/src/html/user.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Event.js" afterPath="$PROJECT_DIR$/src/Model/Event.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +170,18 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="46" column="18" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+            <state relative-caret-position="475">
+              <caret line="43" column="3" lean-forward="false" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/html/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -95,11 +257,12 @@
         <option value="$PROJECT_DIR$/src/Model/Participant.js" />
         <option value="$PROJECT_DIR$/src/Model/Guest.js" />
         <option value="$PROJECT_DIR$/src/Model/Event.js" />
+        <option value="$PROJECT_DIR$/html/index.html" />
         <option value="$PROJECT_DIR$/src/main.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="width" value="960" />
     <option name="height" value="1024" />
@@ -108,7 +271,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -121,15 +284,42 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ProjetWEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetWEB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetWEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetWEB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetWEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetWEB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projet WEB MIAGEin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ALAIN\workspace\ProjetWEB\src\backend" />
       <recent name="C:\Users\ALAIN\workspace\ProjetWEB\src" />
+      <recent name="C:\Users\ALAIN\workspace\ProjetWEB\src\backend" />
       <recent name="C:\Users\ALAIN\workspace\ProjetWEB\documentation" />
       <recent name="C:\Users\ALAIN\workspace\ProjetWEB\backend" />
     </key>
@@ -243,7 +433,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1024" extended-state="0" />
+    <frame x="-11" y="-11" width="1942" height="1046" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -254,10 +445,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28607917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27826086" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6140553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22162162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -280,14 +471,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/documentation/TheBanque/librairiesServer/banque.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Participant.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -491,10 +674,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="46" column="18" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        <state relative-caret-position="475">
+          <caret line="43" column="3" lean-forward="false" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
           <folding />
         </state>
       </provider>
