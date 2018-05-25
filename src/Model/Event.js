@@ -16,7 +16,7 @@ function Event(idE, acronym, name, place, desc, dateDeb, dateFin, nbMax, typePar
 
 // affiche les events, recherche par idE
 var getEventByIdE = function(idE){
-    for i in listeEvents
+    //for i in listeEvents
 }
 
 // add new event
