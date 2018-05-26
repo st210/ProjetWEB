@@ -31,11 +31,6 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //app.use('/bower_components', express.static(__dirname + '/bower_components'));
-app.use('/css', express.static('View/assets/vendor/bootstrap/css/bootstrap.css'));
-app.use('/css', express.static('View/assets/vendor/metisMenu/metisMenu.min.css'));
-app.use('/css', express.static('View/assets/dist/css/sb-admin-2.css'));
-app.use('/css', express.static('View/assets/vendor/morrisjs/morris.css'));
-app.use('/css', express.static('View/assets/vendor/font-awesome/css/font-awesome.min.css'));
 app.use(function(req,res){
     res.sendFile(__dirname + '/View/index.html')
 });
