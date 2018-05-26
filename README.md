@@ -1,2 +1,3 @@
 # ProjetWEB
-Mehdy Latreche - Yann Godeau - Estée Desanctis
+Estée Desanctis - Mehdy Latreche - Yann Godeau
+L3 MIAGE - 2017/2018
