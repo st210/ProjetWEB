@@ -1,187 +1,110 @@
-/**** Base de données ****/
+/** LAUNCH APP **/
+var express = require('express'),
+        app = express(),
+        port = parseInt(process.env.PORT, 10) || 8080;
 
-var hostname = 'localhost';
-var port = 3000;
-var mongoose = require('mongoose');
-
-// Options recommandées par mLab pour une connexion à la base
-var options = { keepAlive: 300000, connectTimeoutMS: 30000 };
-
-// URL de la base de données
-var urlmongo = "mongodb://admin:admin@ds235180.mlab.com:35180/bd-evenements";
-
-// Connexion de l'API à notre base de données
-mongoose.connect(urlmongo, options);
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'Erreur lors de la connexion'));
-db.once('open', function (){
-    console.log("Connexion à la base OK");
-});
-
-
-/**** Variables (code/exécution) ****/
-
-var eventList = {};
-var event = require('./Model/Event');
 var bodyParser = require('body-parser');
-var express = require('express');
-var app = express();
 
+app.use(express.static((__dirname + '/View')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-//app.use('/bower_components', express.static(__dirname + '/bower_components'));
-app.use(function(req,res){
-    res.sendFile(__dirname + '/View/index.html')
+
+app.listen(port, function () {
+    console.log('App listening on port ' + port);
 });
 
-var ObjectID = mongoose.ObjectID;
-var EVENT_COLLECTION = "events";
+/** MONGOOSE BD **/
+var mongoose = require('mongoose');
 
-//Activer CORS: permet request entre multiples hotes localhost
-app.use(function(req, res, next) {
- res.header("Access-Control-Allow-Origin", "*");
- res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
- res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
- next();
-});
+mongoose.Promise = global.Promise;
 
+// Connexion à MongoDB
+var promise = mongoose.connect('mongodb://admin:admin@ds235180.mlab.com:35180/bd-evenements')
+        .then(() => console.log('Connection at mongoDB successful'))
+        .catch((err) => console.error(err));
 
+var bd = mongoose.connection;
 
-/**** Entités ****/
+// Collection Event
+var EVENT_COLLECTION = "Events";
 
-// Pour modéliser les données, le framework mongoose utilise des "schémas"
+// Schema Event
 var eventSchema = mongoose.Schema({
     idE: Number,
     acronym: String,
     name: String,
     place: String,
     desc: String,
-    dateDeb: Date,
-    dateFin: Date,
+    dateDeb: String,
+    dateFin: String,
     nbMax: Number,
     typePart: String
 });
 
-var event = mongoose.model('Event', eventSchema);
+var eventModel = mongoose.model(EVENT_COLLECTION, eventSchema);
 
-/**** Services REST ****/
-
-app.get('/api', function (req, res) {
-    res.send('Bienvenue dans la gestion d\'events!');
-});
-
-app.get('/api', function(req, res) {
-    Event.find(function(err, events){
-        if (err){
-            res.send(err);
-        }
-        res.json(events);
+app.post('/saveEvent', function(req,res){
+    var event = new eventModel({
+        idE: req.body.idE,
+        acronym: req.body.acronym,
+        name: req.body.name,
+        place: req.body.place,
+        desc: req.body.desc,
+        dateDeb: req.body.dateDeb,
+        dateFin: req.body.dateFin,
+        nbMax: req.body.nbMax,
+        typePart: req.body.typePart
     });
-});
 
-app.post('/api', function(req,res){
-      var event = new Event();
-
-      event.idE = req.body.idE;
-      event.acronym = req.body.acronym;
-      event.name = req.body.name;
-      event.place = req.body.place;
-      event.desc = req.body.desc;
-      event.dateDeb = req.body.dateDeb;
-      event.dateFin = req.body.dateFin;
-      event.nbMax = req.body.nbMax;
-      event.typePart = req.body.typePart;
-
-      event.save(function(err){
-        if(err){
-          res.send(err);
-        }
-        res.send({message : 'L\'évènement a bien été enregistré!'});
-      })
-});
-
-
-// find an event by id
-app.get('/api/event/:idE', function (req, res){
-    var idE = req.params.idE;
-    if (isNaN(idE)){
-        res.status(400).json({error: `Event ${idE} invalide.`});
-    } else {
-        if (!listeEvents){
-            res.status(400).json({error: `Event ${req.params.idE} inexistant.`});
-        } else if (!Event.createEvent(idE, "test", "test", "test", "test", "test", "test", 2, "test")){
-            res.status(409).json({error: `Event ${req.params.idE} déjà existant.`});
-        } else {
-            res.status(201).json(req.body);
-        }
-    }
-});
-
-// update an event by id
-//app.put('/api/event/get/:idE', function (req, res){});
-
-// delete an event by id
-//app.delete('/api/event/get/:idE', function (req, res){});
-
-// find all events
-app.get('/api/event', function (req, res){
-    db.collection(EVENT_COLLECTION).find({}).toArray(function(err, docs) {
+    bd.collection(EVENT_COLLECTION).save(event, function(err, result) {
         if (err) {
-          handleError(res, err.message, "Failed to get events.");
+          handleError(res, err.message, "Erreur. Impossible de créer un nouvel évènement.");
         } else {
-          res.status(200).json(docs);
+          res.send(result);
         }
-     });
-    res.json({message: "Liste test event: ",
-              idE: req.query.idE,
-              acronym: req.query.acronym,
-              name: req.query.name,
-              place: req.query.place,
-              desc: req.query.desc,
-              dateDeb: req.query.dateDeb,
-              dateFin: req.query.dateFin,
-              nbMax: req.query.nbMax,
-              typePart: req.query.typePart});
+    });
+
+    // nettoyage mémoire mongoose
+    delete mongoose.models.eventModel;
+    delete mongoose.models.event;
+    delete mongoose.modelSchemas.eventSchema;
+
+    // enregistrement instantanné
+    mongoose.Promise._asap;
 });
 
-// create a new event
-app.post("/api/event", function(req, res) {
-  var newEvent = req.body;
-  newEvent.createDate = new Date();
-
-  if (!req.body.name) {
-    handleError(res, "Saisie invalide.", "Vous devez entrer un nom.", 400);
-  }
-
-  db.collection(EVENT_COLLECTION).insertOne(newEvent, function(err, doc) {
-    if (err) {
-      handleError(res, err.message, "Erreur. Impossible de créer un nouvel évènement.");
-    } else {
-      res.status(201).json(doc.ops[0]);
-    }
-  });
+app.get('/getAllEvents', function(req,res){
+    bd.collection(EVENT_COLLECTION).find({}).toArray(function(err, result) {
+        if (err) {
+          handleError(res, err.message, "Erreur. Cet event n'existe pas.");
+        } else {
+          res.send(result);
+        }
+      });
 });
 
-
-// appel test url: http://localhost:3000/api/event?idE=1&acronym=L3&name=test&place=test&desc=test&dateDeb=test&dateFin=test&nbMax=2&typePart=test
-/* ancien post: créé event et permet affichage json via get (lien au dessus)
-app.post('/api/event', function (req, res){
-    var event = new Event();
-    event.idE = req.body.idE;
-    event.acronym = req.body.acronym;
-    event.name = req.body.name;
-    event.place = req.body.place;
-    event.desc = req.body.desc;
-    event.dateDeb = req.body.dateDeb;
-    event.dateFin = req.body.dateFin;
-    event.nbMax = req.body.nbMax;
-    event.typePart = req.body.typePart;
-});*/
-
-app.listen(3000, function () {
-    console.log('App listening on port 3000');
+app.post('/getEventById', function(req,res){
+    bd.collection(EVENT_COLLECTION).findOne({"idE": req.body.idE}, function(err, result) {
+        if (err) {
+          handleError(res, err.message, "Erreur. Cet event n'existe pas.");
+        } else {
+          res.send(result);
+        }
+      });
 });
 
+app.post('/deleteEventById', function(req,res){
+    bd.collection(EVENT_COLLECTION).remove({"idE": req.body.idE}, function(err, result) {
+        if (err) {
+          handleError(res, err.message, "Erreur. Impossible de supprimer l'évènement.");
+        } else {
+          res.send(result);
+        }
+    });
 
-// pour tester -> node main.js
+    // enregistrement instantanné
+    mongoose.Promise._asap;
+});
+
+// export
+module.exports = app;

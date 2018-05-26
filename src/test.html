@@ -41,18 +41,20 @@
 <br/><br/><br/>
 
 <!-- Affichage d'un Event -->
-<div class ="container" ng-repeat="event in events">
-    <table><tr>
-        <td>{{event.idE}}</td>
-        <td>{{event.acronym}}</td>
-        <td>{{event.name}}</td>
-        <td>{{event.desc}}</td>
-        <td>{{event.place}}</td>
-        <td>{{event.dateDeb}}</td>
-        <td>{{event.dateFin}}</td>
-        <td>{{event.nbMax}}</td>
-        <td>{{event.typePart}}</td>
-    </tr></table>
+<div class="container" ng-repeat="event in events">
+    <table>
+        <tr>
+            <td>{{event.idE}}</td>
+            <td>{{event.acronym}}</td>
+            <td>{{event.name}}</td>
+            <td>{{event.desc}}</td>
+            <td>{{event.place}}</td>
+            <td>{{event.dateDeb}}</td>
+            <td>{{event.dateFin}}</td>
+            <td>{{event.nbMax}}</td>
+            <td>{{event.typePart}}</td>
+        </tr>
+    </table>
 
     <!-- Bouton participation si event non complet -->
     <!--<span ng-if="{{ev.cloture}} = true">-->
@@ -61,15 +63,21 @@
 </div>
 <br/><br/><br/>
 
-<div class ="container" ng-repeat="event in events">
+<div class="container" ng-repeat="event in events">
     <!-- id="{{event._id}}"-->
-    <table><tr>
-        <td>{{event.idE}}</td>
-        <td>{{event.acronym}}</td>
-        <td>{{event.name}}</td>
-        <td><button type="button" ng-click="getEventById(event.idE)">détails</button></td>
-        <td><button type="button" ng-click="deleteEventById(event.idE)">supprimer</button></td>
-    </tr></table>
+    <table>
+        <tr>
+            <td>{{event.idE}}</td>
+            <td>{{event.acronym}}</td>
+            <td>{{event.name}}</td>
+            <td>
+                <button type="button" ng-click="getEventById(event.idE)">détails</button>
+            </td>
+            <td>
+                <button type="button" ng-click="deleteEventById(event.idE)">supprimer</button>
+            </td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>

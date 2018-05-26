@@ -1,12 +1,15 @@
 {
   "name": "projetweb",
   "version": "1.0.0",
-  "description": "Mehdy Latreche - Yann Godeau - Estée Desanctis",
+  "description": "Estée Desanctis - Mehdy Latreche - Yann Godeau",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "angular": "^1.7.0",
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "mongoose": "^5.1.1"
+    "mongodb": "^3.1.0-beta4",
+    "mongoose": "^5.1.1",
+    "npm": "^6.1.0"
   },
   "devDependencies": {},
   "scripts": {
