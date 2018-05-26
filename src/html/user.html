@@ -9,26 +9,23 @@
         <meta name="description" content="">
         <meta name="author" content="Mehdy LATRECHE, Yann GODEAU, Estée DESANCTIS">
 
-        <title>Projet Application Web (UPS) : Accueil</title>
+        <title>Projet Application Web (UPS) : Mon espace</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 
         <!-- Bootstrap Core CSS -->
         <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
         <!-- MetisMenu CSS -->
         <link href="assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
         <!-- Custom CSS -->
         <link href="assets/dist/css/sb-admin-2.css" rel="stylesheet">
-
         <!-- Morris Charts CSS -->
         <link href="assets/vendor/morrisjs/morris.css" rel="stylesheet">
-
         <!-- Custom Fonts -->
         <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
     </head>
 
-    <body>
+    <body ng-controller="ControllerWEB">
 
         <!-- Wrapper -->
         <div id="wrapper">
@@ -84,7 +81,7 @@
                 <!-- Page Wrapper : Title -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Connexion / Inscription</h1>
+                        <h1 class="page-header">Mon espace</h1>
                     </div>
                 </div>
                 <!-- / Page Wrapper : Title -->
@@ -94,63 +91,29 @@
                         <div class="col-lg-5">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <i class="fa fa-bar-chart-o fa-fw"></i> Inscription
+                                    <i class="fa fa-bar-chart-o fa-fw"></i> Changement du mot de passe
                                 </div>
                                 <div class="panel-body">
 
-                                <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label>Pseudo</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Saisissez votre pseudonyme qui vous permettra de vous identifier.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label>Mot de passe</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Saisissez votre mot de passe qui vous permettra de vous identifier.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label>Nom</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Saisissez votre nom de famille.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label>Prénom</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Saisissez votre prénom.</p>
-                                            </div>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Mot de passe actuel</label>
+                                        <input type="password" class="form-control">
+                                        <p class="help-block">Saisissez votre mot de passe actuel.</p>
                                     </div>
 
                                     <div class="form-group">
-                                            <label>Adresse mail</label>
-                                            <input class="form-control">
-                                            <p class="help-block">Saisissez votre adresse mail.</p>
-                                        </div>
-    
-                                    <div class="form-group">
-                                        <label>Téléphone</label>
-                                        <input class="form-control">
-                                        <p class="help-block">Saisissez votre numéro de téléphone.</p>
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <label>Entreprise</label>
-                                        <input class="form-control">
-                                        <p class="help-block"><b>Facultatif</b> : Saisissez le nom de l'entreprise du participant principal.</p>
+                                        <label>Nouveau mot de passe</label>
+                                        <input type="password" class="form-control">
+                                        <p class="help-block">Saisissez un nouveau mot de passe.</p>
                                     </div>
 
-                                    <button type="button" class="btn btn-primary pull-right">Valider mon inscription</button>
+                                    <div class="form-group">
+                                        <label>Confirmer le nouveau mot de passe</label>
+                                        <input type="password" class="form-control">
+                                        <p class="help-block">Saisissez à nouveau le nouveau mot de passe.</p>
+                                    </div>
+
+                                    <button type="button" class="btn btn-warning pull-right">Changer son mot de passe</button>
                                 </div>
                             </div>
                         </div>
@@ -158,26 +121,50 @@
                         <div class="col-lg-7">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <i class="fa fa-bar-chart-o fa-fw"></i> Connexion à votre espace
+                                        <i class="fa fa-bar-chart-o fa-fw"></i> Informations
                                     </div>
                                     <div class="panel-body">
     
-                                        <div class="form-group">
-                                                <label>Pseudo</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Saisissez le pseudonyme renseigné lors de votre inscription.</p>
-                                            </div>
-
-                                        <div class="form-group">
-                                            <label>Mot de passe</label>
-                                            <input class="form-control">
-                                            <p class="help-block">Saisissez le mot de passe renseigné lors de votre inscription.</p>
-                                        </div>
-
-                                        <button type="button" class="btn btn-success pull-right">Se connecter</button>
+                                            <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Nom</label>
+                                                            <input class="form-control" value="Latreche" disabled >
+                                                            <p class="help-block">Votre nom de famille renseigné.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Prénom</label>
+                                                            <input class="form-control" value="Mehdy" disabled >
+                                                            <p class="help-block">Votre prénom renseigné.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="form-group">
+                                                        <label>Adresse mail</label>
+                                                        <input class="form-control">
+                                                        <p class="help-block">Votre adresse mail renseigné.</p>
+                                                    </div>
+                
+                                                <div class="form-group">
+                                                    <label>Téléphone</label>
+                                                    <input class="form-control">
+                                                    <p class="help-block">Votre numéro de téléphone renseigné.</p>
+                                                </div>
+                
+                                                <div class="form-group">
+                                                    <label>Entreprise</label>
+                                                    <input class="form-control">
+                                                    <p class="help-block"><b>Facultatif</b> : Le nom de l'entreprise renseigné.</p>
+                                                </div>
+    
+                                        <button type="button" class="btn btn-primary pull-right">Mettre à jour</button>
                                     </div>
                                 </div>
                             </div>
+
                     </div>
                     <!-- / Page Wrapper : Inscription -->
 

@@ -11,24 +11,21 @@
 
         <title>Projet Application Web (UPS) : Création d'un évenement</title>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
         <!-- Bootstrap Core CSS -->
         <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
         <!-- MetisMenu CSS -->
         <link href="assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
         <!-- Custom CSS -->
         <link href="assets/dist/css/sb-admin-2.css" rel="stylesheet">
-
         <!-- Morris Charts CSS -->
         <link href="assets/vendor/morrisjs/morris.css" rel="stylesheet">
-
         <!-- Custom Fonts -->
         <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
     </head>
 
-    <body>
+    <body ng-controller="ControllerWEB">
 
         <!-- Wrapper -->
         <div id="wrapper">
@@ -162,14 +159,14 @@
                                                         <div class="col-lg-8">
                                                             <div class="form-group">
                                                                 <label>Intitulé du type de participant</label>
-                                                                <input class="form-control">
+                                                                <input class="form-control" ng-model="Participant">
                                                                 <p class="help-block">Saisissez le nom du type de participant autorisé.</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="form-group">
                                                                 <label>Nombre d'accompagnants autorisé</label>
-                                                                <input class="form-control">
+                                                                <input class="form-control" ng-model="nbAccompagnants">
                                                                 <p class="help-block">Saisissez pour ce type de participant le nombre d'accompagnant autorisé.</p>
                                                             </div>
                                                         </div>
@@ -189,7 +186,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                     <button onclick="window.location.href='evenements.html'" type="button" class="btn btn-primary pull-left">Retour</button>
-                                    <button type="button" class="btn btn-success pull-right">Créer cet évenement</button>
+                                    <button type="button" class="btn btn-success pull-right" ng-click="creerEvent()">Créer cet évenement</button>
                             </div>
                         </div>
                     </div>
