@@ -19,7 +19,7 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
 
         $http.post("/saveEvent", jsonEvent);
 
-        window.location.href = "index.html";
+        window.location.href = "/create-evenement.html";
     };
 
     $scope.getAllEvents = function() {
@@ -43,6 +43,6 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
             $scope.event = response.data;
         });
 
-        window.location.href = "index.html";
+        window.location.href = "evenements.html";
     }
 });
