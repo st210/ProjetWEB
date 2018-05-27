@@ -94,19 +94,13 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <label>Id de l'évenement</label>
-                                    <input class="form-control" ng-model="Event.idE" placeholder="ex: 1"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-5">
                                 <div class="form-group">
                                     <label>Acronyme de l'évenement</label>
                                     <input class="form-control" ng-model="Event.acronym" placeholder="ex: galatlse"/>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-7">
                                 <div class="form-group">
                                     <label>Nom de l'évenement</label>
                                     <input class="form-control" ng-model="Event.name"
@@ -163,6 +157,7 @@
                             <div class="panel-body">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
+                                        <!-- ***** TO DO: ng-model="Event.typePart" ***** -->
                                         <i class="fa fa-bar-chart-o fa-fw"></i> Type de participant <b>n°1</b>
                                         <button type="button" class="btn btn-danger btn-xs pull-right"><i
                                                 class="fa fa-times"></i>
@@ -173,17 +168,13 @@
                                             <div class="col-lg-8">
                                                 <div class="form-group">
                                                     <label>Intitulé du type de participant</label>
-                                                    <input class="form-control" ng-model="Event.typePart">
-                                                    <p class="help-block">Saisissez le nom du type de participant
-                                                        autorisé.</p>
+                                                    <input class="form-control" ng-model="TypePart.intitule" placeholder="Intitule du type de Participant">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Nombre d'accompagnants autorisé</label>
-                                                    <input class="form-control" ng-model="Part.nbAccompagnants">
-                                                    <p class="help-block">Saisissez pour ce type de participant le
-                                                        nombre d'accompagnant autorisé.</p>
+                                                    <input class="form-control" ng-model="TypePart.nbMax" placeholder="Nombre max d'accompagnants pour ce type de Participant">
                                                 </div>
                                             </div>
                                         </div>
@@ -202,11 +193,12 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <input type="hidden" ng-model="Event._id"/>
+                        <input type="hidden" ng-model="Part._id"/>
                         <button onclick="window.location.href='evenements.html'" type="button"
                                 class="btn btn-primary pull-left">Retour
                         </button>
                         <button type="button" class="btn btn-success pull-right" ng-click="creerEvent()">Créer cet
-                            évenement
+                            évènement
                         </button>
                     </div>
                 </div>
@@ -219,6 +211,76 @@
 
 </div>
 <!-- / Wrapper -->
+
+
+<script>
+        var nbElement = 0;
+
+        function creatediv(){
+
+            nbElement += 1;
+            var div = document.getElementById('accompagnants');
+
+            var nb = document.getElementById('accompagnant-nb');
+            nb.innerHTML = nbElement;
+
+            div.innerHTML +=
+            '<div id="accompagnant-' + nbElement + '" class="panel-body">' +
+                '<div class="panel panel-default">' +
+                    '<div class="panel-heading">' +
+                        '<i class="fa fa-bar-chart-o fa-fw"></i> Accompagnant <b>n°' + nbElement + '</b>' +
+                        '<button type="button" onClick="removeDiv(' + nbElement + ')" class="btn btn-danger btn-xs pull-right"><i class="fa fa-times"></i></button>' +
+                    '</div>' +
+                    '<div class="panel-body">' +
+                            '<div class="row">' +
+                                '<div class="col-lg-6">' +
+                                    '<div class="form-group">' +
+                                        '<label>Nom</label>' +
+                                        '<input id="accompagnant-nom-' + nbElement + '" name="accompagnant-nom-' + nbElement + '" class="form-control">' +
+                                        '<p class="help-block">Indiquez le nom du participant principal.</p>' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="col-lg-6">' +
+                                    '<div class="form-group">' +
+                                        '<label>Prénom</label>' +
+                                        '<input id="accompagnant-prenom-' + nbElement + '" name="accompagnant-prenom-' + nbElement + '" class="form-control">' +
+                                        '<p class="help-block">Indiquez le prénom du participant principal.</p>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+
+                            '<div class="form-group">' +
+                                '<label>Adresse mail</label>' +
+                                '<input id="accompagnant-mail-' + nbElement + '" name="accompagnant-mail-' + nbElement + '" class="form-control">' +
+                                '<p class="help-block">Indiquez l\'adresse mail du participant principal.</p>' +
+                            '</div>' +
+
+                            '<div class="form-group">' +
+                                '<label>Téléphone</label>' +
+                                '<input id="accompagnant-tel-' + nbElement + '" name="accompagnant-tel-' + nbElement + '" class="form-control">' +
+                                '<p class="help-block">Indiquez le numéro de téléphone du participant principal.</p>' +
+                            '</div>' +
+
+                            '<div class="form-group">' +
+                                '<label>Entreprise</label>' +
+                                '<input id="accompagnant-entreprise-' + nbElement + '" name="accompagnant-entreprise-' + nbElement + '" class="form-control">' +
+                                '<p class="help-block"><b>Facultatif</b> : Indiquez le nom de l\'entreprise du participant principal.</p>' +
+                            '</div>' +
+                        '</div>' +
+                '</div>' +
+            '</div>';
+        }
+    </script>
+<script>
+        function removeDiv(id){
+            nbElement -= 1;
+
+            var nb = document.getElementById('accompagnant-nb');
+            nb.innerHTML = nbElement;
+
+            document.getElementById('accompagnant-' + id).remove();
+        }
+    </script>
 
 <!-- jQuery -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>

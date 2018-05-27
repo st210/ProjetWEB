@@ -1,4 +1,4 @@
-/** LAUNCH APP **/
+/********* CONFIG APP *********/
 var express = require('express'),
     app = express(),
     port = parseInt(process.env.PORT, 10) || 8080;
@@ -13,7 +13,8 @@ app.listen(port, function () {
     console.log('App listening on port ' + port);
 });
 
-/** MONGOOSE BD **/
+
+/********* MONGOOSE DATABASE *********/
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
@@ -23,12 +24,13 @@ var promise = mongoose.connect('mongodb://admin:admin@ds235180.mlab.com:35180/bd
 
 var bd = mongoose.connection;
 
+
+/********* EVENT *********/
 // Collection Event
 var EVENT_COLLECTION = "Events";
 
 // Schema Event
 var eventSchema = mongoose.Schema({
-    idE: Number,
     acronym: String,
     name: String,
     place: String,
@@ -43,7 +45,6 @@ var eventModel = mongoose.model(EVENT_COLLECTION, eventSchema);
 
 app.post('/saveEvent', function (req, res) {
     var event = new eventModel({
-        idE: req.body.idE,
         acronym: req.body.acronym,
         name: req.body.name,
         place: req.body.place,
@@ -82,7 +83,7 @@ app.get('/getAllEvents', function (req, res) {
 });
 
 app.get('/getEventById', function (req, res) {
-    bd.collection(EVENT_COLLECTION).findOne({"idE": req.body.idE}, function (err, result) {
+    bd.collection(EVENT_COLLECTION).findOne({"acronym": req.body.acronym}, function (err, result) {
         if (err) {
             handleError(res, err.message, "Erreur. Cet event n'existe pas.");
         } else {
@@ -93,7 +94,7 @@ app.get('/getEventById', function (req, res) {
 });
 
 app.post('/deleteEventById', function (req, res) {
-    bd.collection(EVENT_COLLECTION).remove({"idE": req.body.idE}, function (err, result) {
+    bd.collection(EVENT_COLLECTION).remove({"acronym": req.body.acronym}, function (err, result) {
         if (err) {
             handleError(res, err.message, "Erreur. Impossible de supprimer l'évènement.");
         } else {
@@ -104,5 +105,130 @@ app.post('/deleteEventById', function (req, res) {
     mongoose.Promise._asap;
 });
 
-// export
+
+/********* PARTICIPANT *********/
+// Collection Participants
+var PART_COLLECTION = "Participants";
+
+// Schema Participant
+var participantSchema = mongoose.Schema({
+    firstname: String,
+    lastname: String,
+    mail: String,
+    phone: String,
+    workplace: String,
+    typePart: String,
+    listGuest: Array
+});
+
+var participantModel = mongoose.model(PART_COLLECTION, participantSchema);
+
+app.post('/savePart', function (req, res) {
+    var part = new participantModel({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        mail: req.body.mail,
+        phone: req.body.phone,
+        workplace: req.body.workplace,
+        typePart: req.body.typePart,
+        listGuest: req.body.listGuest
+    });
+
+    bd.collection(PART_COLLECTION).save(part, function (err, result) {
+        if (err) {
+            handleError(res, err.message, "Erreur. Impossible de créer un nouveau participant.");
+        } else {
+            res.send(result);
+        }
+    });
+
+    // nettoyage mémoire mongoose
+    delete mongoose.models.participantModel;
+    delete mongoose.models.part;
+    delete mongoose.modelSchemas.participantSchema;
+
+    // enregistrement instantanné
+    mongoose.Promise._asap;
+});
+
+
+/********* GUEST *********/
+// Collection Invites
+var GUEST_COLLECTION = "Invites";
+
+// Schema Invite
+var guestSchema = mongoose.Schema({
+    firstname: String,
+    lastname: String,
+    mail: String,
+    phone: String,
+    workplace: String
+});
+
+var guestModel = mongoose.model(GUEST_COLLECTION, guestSchema);
+
+app.post('/saveGuest', function (req, res) {
+    var guest = new guestModel({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        mail: req.body.mail,
+        phone: req.body.phone,
+        workplace: req.body.workplace
+    });
+
+    bd.collection(GUEST_COLLECTION).save(guest, function (err, result) {
+        if (err) {
+            handleError(res, err.message, "Erreur. Impossible de créer un nouvel invité.");
+        } else {
+            res.send(result);
+        }
+    });
+
+    // nettoyage mémoire mongoose
+    delete mongoose.models.guestModel;
+    delete mongoose.models.guest;
+    delete mongoose.modelSchemas.guestSchema;
+
+    // enregistrement instantanné
+    mongoose.Promise._asap;
+});
+
+
+/********* EVENT *********/
+// Collection Event
+var TYPEPART_COLLECTION = "TypeParticipants";
+
+// Schema Event
+var typePartSchema = mongoose.Schema({
+    intitule: String,
+    nbMax: Number
+});
+
+var typePartModel = mongoose.model(TYPEPART_COLLECTION, typePartSchema);
+
+app.post('/saveTypePart', function (req, res) {
+    var typePart = new eventModel({
+        intitule: req.body.intitule,
+        nbMax: req.body.nbMax
+    });
+
+    bd.collection(TYPEPART_COLLECTION).save(typePart, function (err, result) {
+        if (err) {
+            handleError(res, err.message, "Erreur. Impossible de créer un nouveau type de Participant.");
+        } else {
+            res.send(result);
+        }
+    });
+
+    // nettoyage mémoire mongoose
+    delete mongoose.models.typePartModel;
+    delete mongoose.models.typePart;
+    delete mongoose.modelSchemas.typePartSchema;
+
+    // enregistrement instantanné
+    mongoose.Promise._asap;
+});
+
+
+/********* EXPORT APP *********/
 module.exports = app;

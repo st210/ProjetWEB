@@ -1,11 +1,11 @@
 var myApp = angular.module('app', []).controller('ControllerWEB', function ($scope, $http) {
 
+    /******* EVENT *******/
     $scope.creerEvent = function () {
         console.log($scope.Events);
 
         // Objet JSON Event
         var event = {};
-        event.idE = $scope.Event.idE;
         event.acronym = $scope.Event.acronym;
         event.name = $scope.Event.name;
         event.place = $scope.Event.place;
@@ -19,6 +19,15 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
 
         $http.post("/saveEvent", jsonEvent);
 
+        // Ajouter un Type de Participant
+        var typePart = {};
+        typePart.intitule = $scope.TypePart.intitule;
+        typePart.nbMax = $scope.TypePart.nbMax;
+
+        jsonEvent = JSON.stringify(typePart);
+        $http.post("/saveTypePart", jsonEvent);
+
+        // Rediriger la page après traitement
         window.location.href = "/index.html";
     };
 
@@ -28,16 +37,16 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
         });
     };
 
-    $scope.getEventById = function (idE) {
-        var jsonEvent = JSON.stringify({idE: idE});
+    $scope.getEventById = function (acronym) {
+        var jsonEvent = JSON.stringify({acronym: acronym});
 
         $http.get("/getEventById", jsonEvent).then(function (response) {
             $scope.event = response.data;
         });
     };
 
-    $scope.deleteEventById = function (idE) {
-        var jsonEvent = JSON.stringify({idE: idE});
+    $scope.deleteEventById = function (acronym) {
+        var jsonEvent = JSON.stringify({acronym: acronym});
 
         $http.post("/deleteEventById", jsonEvent).then(function (response) {
             $scope.event = response.data;
@@ -46,8 +55,8 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
         window.location.href = "/View/evenements.html";
     }
 
-    $scope.goSeeEvt = function (idE) {
-        window.location.replace("see-evenement.html?idE=" + idE);
+    $scope.goSeeEvt = function (acronym) {
+        window.location.replace("see-evenement.html?acronym=" + acronym);
     }
 
     $scope.getEventIdURL = function () {
@@ -60,6 +69,46 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
             var param = query[i].split("=");
             GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
         }
-        return GET.idE;
+        return GET.acronym;
     }
+
+    /******* PARTICIPANT *******/
+    $scope.creerParticipant = function () {
+        console.log($scope.Participants);
+
+        // Objet JSON Participant
+        var part = {};
+        part.firstname = $scope.Part.firstname;
+        part.lastname = $scope.Part.lastname;
+        part.mail = $scope.Part.mail;
+        part.phone = $scope.Part.phone;
+        part.workplace =  $scope.Part.workplace;
+        part.typePart = $scope.Part.typePart;
+        part.listGuest = $scope.Part.listGuest;
+
+        var jsonEvent = JSON.stringify(part);
+
+        $http.post("/savePart", jsonEvent);
+
+        window.location.href = "/index.html";
+    };
+
+    /******* GUEST *******/
+    $scope.creerGuest = function () {
+        console.log($scope.Guests);
+
+        // Objet JSON Guest
+        var guest = {};
+        guest.firstname = $scope.Guest.firstname;
+        guest.lastname = $scope.Guest.lastname;
+        guest.mail = $scope.Guest.mail;
+        guest.phone = $scope.Guest.phone;
+        guest.workplace =  $scope.Guest.workplace;
+
+        var jsonEvent = JSON.stringify(guest);
+
+        $http.post("/saveGuest", jsonEvent);
+
+        window.location.href = "/index.html";
+    };
 });
