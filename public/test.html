@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Projet Application Web</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="/public/Controller/MainController.js" type="text/javascript"></script>
+</head>
+<body ng-controller="ControllerWEB" data-ng-init="getAllEvents()">
+<!-- Création d'un Event -->
+<label for="idE">idE</label>
+<input id="idE" class="form-control" ng-model="Event.idE">
+<br/>
+<label for="acronym">Acronym</label>
+<input id="acronym" class="form-control" ng-model="Event.acronym">
+<br/>
+<label for="name">Event Name</label>
+<input id="name" class="form-control" ng-model="Event.name">
+<br/>
+<label for="place">Place</label>
+<input id="place" class="form-control" ng-model="Event.place">
+<br/>
+<label for="desc">Description</label>
+<input id="desc" class="form-control" ng-model="Event.desc">
+<br/>
+<label for="dateDeb">Date de Début</label>
+<input id="dateDeb" class="form-control" ng-model="Event.dateDeb" placeholder="DD/MM/AAAA">
+<br/>
+<label for="dateFin">Date de Fin</label>
+<input id="dateFin" class="form-control" ng-model="Event.dateFin" placeholder="DD/MM/AAAA">
+<br/>
+<label for="nbMax">Maximum de Participants</label>
+<input id="nbMax" class="form-control" ng-model="Event.nbMax">
+<br/>
+<label for="typePart">Type de Participants</label>
+<input id="typePart" class="form-control" ng-model="Event.typePart">
+<br/>
+<input type="hidden" ng-model="Event._id"/>
+<button type="button" ng-click="creerEvent()">Créer cet évenement</button>
+<br/><br/><br/>
+
+<!-- Affichage d'un Event -->
+<div class="container" ng-repeat="event in events">
+    <table>
+        <tr>
+            <td>{{event.idE}}</td>
+            <td>{{event.acronym}}</td>
+            <td>{{event.name}}</td>
+            <td>{{event.desc}}</td>
+            <td>{{event.place}}</td>
+            <td>{{event.dateDeb}}</td>
+            <td>{{event.dateFin}}</td>
+            <td>{{event.nbMax}}</td>
+            <td>{{event.typePart}}</td>
+        </tr>
+    </table>
+
+    <!-- Bouton participation si event non complet -->
+    <!--<span ng-if="{{ev.cloture}} = true">-->
+    <!-- <button type="button" class="btn pull-right" ng-show="!event.cloture" ng-click="participerEvent(event.idEvent)">Je participe !</button>-->
+    <!--</span>-->
+</div>
+<br/><br/><br/>
+
+<div class="container" ng-repeat="event in events">
+    <!-- id="{{event._id}}"-->
+    <table>
+        <tr>
+            <td>{{event.idE}}</td>
+            <td>{{event.acronym}}</td>
+            <td>{{event.name}}</td>
+            <td>
+                <button type="button" ng-click="getEventById(event.idE)">détails</button>
+            </td>
+            <td>
+                <button type="button" ng-click="deleteEventById(event.idE)">supprimer</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

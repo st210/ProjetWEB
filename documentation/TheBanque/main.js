@@ -1,8 +1,7 @@
 /*
  * Librairies utilisées
  */
-var banque = require('./librairiesServer/banque');
-var bodyParser = require('body-parser');
+@var bodyParser = require('body-parser');
 var express = require('express');
 
 /*
