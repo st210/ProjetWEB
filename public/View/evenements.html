@@ -115,7 +115,7 @@
                                 </p>
                                 <p>
                                     &nbsp;
-                                    <button ng-click="deleteEventById(event.idE)" type="button"
+                                    <button ng-click=deleteEventById(event.idE) type="button"
                                             class="btn btn-danger pull-right">
                                         Supprimer
                                     </button>
@@ -125,7 +125,7 @@
                                         Gérer
                                     </button>
 
-                                    <button onclick="window.location.href='see-evenement.html'" type="button"
+                                    <button ng-click=goSeeEvt(event.idE) type="button"
                                             class="btn btn-default pull-right" style="margin-right: 10px;">
                                         Participer
                                     </button>

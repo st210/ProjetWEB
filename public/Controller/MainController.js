@@ -1,6 +1,6 @@
 var myApp = angular.module('app', []).controller('ControllerWEB', function ($scope, $http) {
 
-    $scope.creerEvent = function(){
+    $scope.creerEvent = function () {
         console.log($scope.Events);
 
         // Objet JSON Event
@@ -22,27 +22,44 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
         window.location.href = "/index.html";
     };
 
-    $scope.getAllEvents = function() {
+    $scope.getAllEvents = function () {
         $http.get("/getAllEvents",).then(function (response) {
             $scope.events = response.data;
         });
     };
 
-    $scope.getEventById = function(idE) {
+    $scope.getEventById = function (idE) {
         var jsonEvent = JSON.stringify({idE: idE});
 
-        $http.post("/getEventById",jsonEvent).then(function (response) {
+        $http.get("/getEventById", jsonEvent).then(function (response) {
             $scope.event = response.data;
         });
     };
 
-    $scope.deleteEventById = function(idE) {
+    $scope.deleteEventById = function (idE) {
         var jsonEvent = JSON.stringify({idE: idE});
 
-        $http.post("/deleteEventById",jsonEvent).then(function (response) {
+        $http.post("/deleteEventById", jsonEvent).then(function (response) {
             $scope.event = response.data;
         });
 
         window.location.href = "/View/evenements.html";
+    }
+
+    $scope.goSeeEvt = function (idE) {
+        window.location.replace("see-evenement.html?idE=" + idE);
+    }
+
+    $scope.getEventIdURL = function () {
+        var GET = {};
+        var query = window.location.search.substring(1).split("&");
+        for (var i = 0, max = query.length; i < max; i++) {
+            if (query[i] === "") // check for trailing & with no param
+                continue;
+
+            var param = query[i].split("=");
+            GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
+        }
+        return GET.idE;
     }
 });

@@ -1,12 +1,12 @@
 /** LAUNCH APP **/
 var express = require('express'),
-        app = express(),
-        port = parseInt(process.env.PORT, 10) || 8080;
+    app = express(),
+    port = parseInt(process.env.PORT, 10) || 8080;
 
 var bodyParser = require('body-parser');
 
 app.use(express.static((__dirname)));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.listen(port, function () {
@@ -19,9 +19,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // Connexion à MongoDB
-var promise = mongoose.connect('mongodb://admin:admin@ds235180.mlab.com:35180/bd-evenements')
-        .then(() => console.log('Connection at mongoDB successful'))
-        .catch((err) => console.error(err));
+var promise = mongoose.connect('mongodb://admin:admin@ds235180.mlab.com:35180/bd-evenements');
 
 var bd = mongoose.connection;
 
@@ -43,7 +41,7 @@ var eventSchema = mongoose.Schema({
 
 var eventModel = mongoose.model(EVENT_COLLECTION, eventSchema);
 
-app.post('/saveEvent', function(req,res){
+app.post('/saveEvent', function (req, res) {
     var event = new eventModel({
         idE: req.body.idE,
         acronym: req.body.acronym,
@@ -56,11 +54,11 @@ app.post('/saveEvent', function(req,res){
         typePart: req.body.typePart
     });
 
-    bd.collection(EVENT_COLLECTION).save(event, function(err, result) {
+    bd.collection(EVENT_COLLECTION).save(event, function (err, result) {
         if (err) {
-          handleError(res, err.message, "Erreur. Impossible de créer un nouvel évènement.");
+            handleError(res, err.message, "Erreur. Impossible de créer un nouvel évènement.");
         } else {
-          res.send(result);
+            res.send(result);
         }
     });
 
@@ -73,35 +71,35 @@ app.post('/saveEvent', function(req,res){
     mongoose.Promise._asap;
 });
 
-app.get('/getAllEvents', function(req,res){
-    bd.collection(EVENT_COLLECTION).find({}).toArray(function(err, result) {
+app.get('/getAllEvents', function (req, res) {
+    bd.collection(EVENT_COLLECTION).find({}).toArray(function (err, result) {
         if (err) {
-          handleError(res, err.message, "Erreur. Cet event n'existe pas.");
+            handleError(res, err.message, "Erreur. Cet event n'existe pas.");
         } else {
-          res.send(result);
-        }
-      });
-});
-
-app.post('/getEventById', function(req,res){
-    bd.collection(EVENT_COLLECTION).findOne({"idE": req.body.idE}, function(err, result) {
-        if (err) {
-          handleError(res, err.message, "Erreur. Cet event n'existe pas.");
-        } else {
-          res.send(result);
-        }
-      });
-});
-
-app.post('/deleteEventById', function(req,res){
-    bd.collection(EVENT_COLLECTION).remove({"idE": req.body.idE}, function(err, result) {
-        if (err) {
-          handleError(res, err.message, "Erreur. Impossible de supprimer l'évènement.");
-        } else {
-          res.send(result);
+            res.send(result);
         }
     });
+});
 
+app.get('/getEventById', function (req, res) {
+    bd.collection(EVENT_COLLECTION).findOne({"idE": req.body.idE}, function (err, result) {
+        if (err) {
+            handleError(res, err.message, "Erreur. Cet event n'existe pas.");
+        } else {
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+app.post('/deleteEventById', function (req, res) {
+    bd.collection(EVENT_COLLECTION).remove({"idE": req.body.idE}, function (err, result) {
+        if (err) {
+            handleError(res, err.message, "Erreur. Impossible de supprimer l'évènement.");
+        } else {
+            res.send(result);
+        }
+    });
     // enregistrement instantanné
     mongoose.Promise._asap;
 });
