@@ -20,8 +20,6 @@
     <link href="assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/dist/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="assets/vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
@@ -106,26 +104,24 @@
                             <!-- Evenement  -->
 
                             <div class="well" ng-repeat="event in events">
-                                <h4>{{event.name}}</h4>
-                                <h5>{{event.dateDeb}} à 15h10 - <b>{{event.place}}</b> -
-                                    <button type="button" class="btn btn-danger btn-xs">0/{{event.nbMax}}</button>
-                                </h5>
+                                <h4><button type="button" class="btn btn-danger btn-xs">1/{{event.nbMax}}</button> {{event.name}}</h4>
+                                <h5>du {{event.dateDeb}} au {{event.dateFin}} à <b>{{event.place}}</b></h5>
                                 <p>
                                     {{event.desc}}
                                 </p>
                                 <p>
                                     &nbsp;
-                                    <button ng-click=deleteEventById(event.idE) type="button"
+                                    <button ng-click="deleteEventById(event.acronym)" type="button"
                                             class="btn btn-danger pull-right">
                                         Supprimer
                                     </button>
 
-                                    <button onclick="window.location.href='edit-evenement.html'" type="button"
+                                    <button ng-click="goEditEvt(event.acronym)" type="button"
                                             class="btn btn-primary pull-right" style="margin-right: 10px;">
                                         Gérer
                                     </button>
 
-                                    <button ng-click=goSeeEvt(event.idE) type="button"
+                                    <button ng-click="getEventById(event.acronym)" type="button"
                                             class="btn btn-default pull-right" style="margin-right: 10px;">
                                         Participer
                                     </button>
@@ -154,11 +150,6 @@
 
 <!-- Metis Menu Plugin JavaScript -->
 <script src="assets/vendor/metisMenu/metisMenu.min.js"></script>
-
-<!-- Morris Charts JavaScript -->
-<script src="assets/vendor/raphael/raphael.min.js"></script>
-<script src="assets/vendor/morrisjs/morris.min.js"></script>
-<script src="assets/data/morris-data.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="assets/dist/js/sb-admin-2.js"></script>

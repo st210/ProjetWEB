@@ -16,8 +16,6 @@
     <link href="View/assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="View/assets/dist/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="View/assets/vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="View/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="Controller/MainController.js" type="text/javascript"></script>
@@ -91,7 +89,7 @@
                                 <i class="fa fa-comments fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">0</div>
+                                <div class="huge">{{nbEvents}}</div>
                                 <div>Evenement(s)</div>
                             </div>
                         </div>
@@ -113,7 +111,7 @@
                                 <i class="fa fa-tasks fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">0</div>
+                                <div class="huge">{{ratio}}</div>
                                 <div>Participant(s) total</div>
                             </div>
                         </div>
@@ -140,7 +138,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="list-group">
-                            <a href="View/see-evenement.html" class="list-group-item" ng-repeat="event in events">
+                            <a href="View/see-evenement.html" class="list-group-item" ng-repeat="event in events | limitTo: 5">
                                 <i class="fa fa-comment fa-fw"></i> {{event.name}}
                                 <span class="pull-right text-muted small"><em>du {{event.dateDeb}} au {{event.dateFin}}</em>
                                         </span>
@@ -162,7 +160,6 @@
                         <i class="fa fa-bar-chart-o fa-fw"></i> Devenez membre
                     </div>
                     <div class="panel-body">
-                        <div id="morris-donut-chart"></div>
                         <a href="View/login.html" class="btn btn-default btn-block">Créer un compte</a>
                     </div>
                     <!-- /.panel-body -->
@@ -183,11 +180,6 @@
 
 <!-- Metis Menu Plugin JavaScript -->
 <script src="View/assets/vendor/metisMenu/metisMenu.min.js"></script>
-
-<!-- Morris Charts JavaScript -->
-<script src="View/assets/vendor/raphael/raphael.min.js"></script>
-<script src="View/assets/vendor/morrisjs/morris.min.js"></script>
-<script src="View/assets/data/morris-data.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="View/assets/dist/js/sb-admin-2.js"></script>

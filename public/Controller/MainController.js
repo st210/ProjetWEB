@@ -2,7 +2,13 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
 
     /******* EVENT *******/
     $scope.creerEvent = function () {
-        console.log($scope.Events);
+        // Ajouter un Type de Participant
+        var typePart = {};
+        typePart.intitule = $scope.TypePart.intitule;
+        typePart.nbMax = $scope.TypePart.nbMax;
+
+        var jsonPart = JSON.stringify(typePart);
+        $http.post("/saveTypePart", jsonPart);
 
         // Objet JSON Event
         var event = {};
@@ -14,27 +20,31 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
         event.dateFin = $scope.Event.dateFin;
         event.nbMax = $scope.Event.nbMax;
         event.typePart = $scope.Event.typePart;
+        event.nbPeople = 0;
 
         var jsonEvent = JSON.stringify(event);
-
         $http.post("/saveEvent", jsonEvent);
 
-        // Ajouter un Type de Participant
-        var typePart = {};
-        typePart.intitule = $scope.TypePart.intitule;
-        typePart.nbMax = $scope.TypePart.nbMax;
-
-        jsonEvent = JSON.stringify(typePart);
-        $http.post("/saveTypePart", jsonEvent);
-
         // Rediriger la page après traitement
-        window.location.href = "/index.html";
+        window.location.href = "/View/evenements.html";
     };
 
     $scope.getAllEvents = function () {
+        var nbE;
+        var nbP;
         $http.get("/getAllEvents",).then(function (response) {
             $scope.events = response.data;
+            $scope.nbEvents = response.data.length;
+            nbE = response.data.length;
         });
+
+        $http.get("/getAllParticipants",).then(function (response) {
+            $scope.nbParticipants = response.data.length;
+            nbP = response.data.length;
+        });
+
+        $scope.ratio = nbE / nbP;
+        //console.log($scope.nbEvents);
     };
 
     $scope.getEventById = function (acronym) {
@@ -43,6 +53,8 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
         $http.get("/getEventById", jsonEvent).then(function (response) {
             $scope.event = response.data;
         });
+
+        window.location.href = "/View/see-evenement.html";
     };
 
     $scope.deleteEventById = function (acronym) {
@@ -59,7 +71,11 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
         window.location.replace("see-evenement.html?acronym=" + acronym);
     }
 
-    $scope.getEventIdURL = function () {
+    $scope.goEditEvt = function (acronym) {
+        window.location.replace("edit-evenement.html?acronym=" + acronym);
+    }
+
+    $scope.getIdURL = function () {
         var GET = {};
         var query = window.location.search.substring(1).split("&");
         for (var i = 0, max = query.length; i < max; i++) {
@@ -74,21 +90,30 @@ var myApp = angular.module('app', []).controller('ControllerWEB', function ($sco
 
     /******* PARTICIPANT *******/
     $scope.creerParticipant = function () {
-        console.log($scope.Participants);
+        //var nbPeople = $scope.Events.nbPeople;
+        //var nbGuest = $scope.Part.listGuest.length;
+        //console.log("people: " + nbPeople + " | guests: " + nbGuest);
 
-        // Objet JSON Participant
-        var part = {};
-        part.firstname = $scope.Part.firstname;
-        part.lastname = $scope.Part.lastname;
-        part.mail = $scope.Part.mail;
-        part.phone = $scope.Part.phone;
-        part.workplace =  $scope.Part.workplace;
-        part.typePart = $scope.Part.typePart;
-        part.listGuest = $scope.Part.listGuest;
+        //if ($scope.Events.nbPeople + $scope.Part.listGuest.length < $scope.Events.nbMax){
+            // Objet JSON Participant
+            var part = {};
+            part.firstname = $scope.Part.firstname;
+            part.lastname = $scope.Part.lastname;
+            part.mail = $scope.Part.mail;
+            part.phone = $scope.Part.phone;
+            part.workplace =  $scope.Part.workplace;
+            part.typePart = $scope.Part.typePart;
+            part.listGuest = $scope.Part.listGuest;
 
-        var jsonEvent = JSON.stringify(part);
+            //var nbToAdd = nbPeople + nbGuest + 1;
+            //$http.post("/addPartToEvent", nbToAdd);
 
-        $http.post("/savePart", jsonEvent);
+            var jsonPart = JSON.stringify(part.listGuest);
+            $http.post("/saveGuest", jsonPart);
+            jsonPart = JSON.stringify(part);
+            $http.post("/savePart", jsonPart);
+
+        //}
 
         window.location.href = "/index.html";
     };

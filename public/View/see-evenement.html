@@ -20,13 +20,11 @@
     <link href="assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/dist/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="assets/vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<body ng-controller="ControllerWEB" data-ng-init="getEventById(getEventIdURL())">
+<body ng-controller="ControllerWEB">
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -82,7 +80,7 @@
         <!-- Page Wrapper : Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Details d'un évenement</h1>
+                <h1 class="page-header">Details d'un évènement</h1>
             </div>
         </div>
         <!-- / Page Wrapper : Title -->
@@ -91,9 +89,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-body" ng-repeat="event in events">
+                    <div class="panel-body">
                         <div class="well">
-                            <h4>{{event.name}}</h4>
+                            <h4>TEST {{event.name}}</h4>
                             <p>
                                 {{event.desc}}
                             </p>
@@ -117,7 +115,7 @@
                                 <div class="form-group">
                                     <label>Prénom</label>
                                     <input class="form-control" ng-model="Part.firstname"
-                                           placeholder="Prénom du participant principale">
+                                           placeholder="Prénom du participant principal">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -232,7 +230,6 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <input type="hidden" ng-model="Event._id"/>
                         <button onclick="window.location.href='evenements.html'" type="button"
                                 class="btn btn-primary pull-left">Retour
                         </button>
@@ -260,10 +257,6 @@
 <!-- Metis Menu Plugin JavaScript -->
 <script src="assets/vendor/metisMenu/metisMenu.min.js"></script>
 
-<!-- Morris Charts JavaScript -->
-<script src="assets/vendor/raphael/raphael.min.js"></script>
-<script src="assets/vendor/morrisjs/morris.min.js"></script>
-<script src="assets/data/morris-data.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="assets/dist/js/sb-admin-2.js"></script>
